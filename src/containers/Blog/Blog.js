@@ -3,7 +3,7 @@ import './Blog.css';
 import Post from '../../components/Posts/Post/Post';
 import NewPost from '../../components/Posts/NewPost/NewPost';
 import FullPost from '../../components/Posts/FullPost/FullPost';
-import axios from 'axios';
+import axios from '../../axios';
 
 class Blog extends Component {
 
@@ -14,7 +14,7 @@ class Blog extends Component {
     };
 
     componentDidMount() {
-        axios.get('https://jsonplaceholder.typicode.com/posts')
+        axios.get('/posts')
             .then(res => {
                 const posts = res.data.slice(0, 6);
 

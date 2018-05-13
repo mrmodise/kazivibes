@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './FullPost.css';
-import axios from 'axios';
+import axios from '../../../axios';
 
 class FullPost extends Component {
     state = {
@@ -10,7 +10,7 @@ class FullPost extends Component {
     componentDidUpdate() {
         if (this.props.id) {
             if (!this.state.loadedPosts || (this.state.loadedPosts && this.state.loadedPosts.id !== this.props.id)) {
-                return axios.get('https://jsonplaceholder.typicode.com/posts/' + this.props.id)
+                return axios.get('/posts/' + this.props.id)
                     .then(response => {
                         console.log(response);
                         this.setState({loadedPosts: response.data});
@@ -20,7 +20,7 @@ class FullPost extends Component {
     }
 
     deleteBlogPostData = () => {
-        axios.delete('https://jsonplaceholder.typicode.com/posts/' + this.props.id)
+        axios.delete('/posts/' + this.props.id)
             .then(response => {
                 console.log('Deleted ', response);
             }).catch(error => console.log(error));
