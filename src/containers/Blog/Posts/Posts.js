@@ -11,6 +11,8 @@ class Posts extends Component {
     };
 
     selectPost = (id) => {
+        // programmatic navigation
+        // this.props.history.push('/' + id);
         this.setState({selectedPostId: id});
     };
 
