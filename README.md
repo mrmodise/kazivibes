@@ -1,4 +1,4 @@
-# Kazi Vibes
+# React Router Dom
 A demo project to illustrate react-router-dom configurations.
 
 ## Notes
